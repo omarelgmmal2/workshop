@@ -24,6 +24,12 @@ class TextStyleTheme {
     color: AppColor.primary,
   );
 
+  static TextStyle textStyle15Bold = GoogleFonts.inter(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.white,
+  );
+
   static TextStyle textStyle18SemiBold = GoogleFonts.inter(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
@@ -36,15 +42,69 @@ class TextStyleTheme {
     color: AppColor.black,
   );
 
+  static TextStyle textStyle15SemiBold = GoogleFonts.inter(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColor.black,
+  );
+
+  static TextStyle textStyle13SemiBold = GoogleFonts.publicSans(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColor.black,
+  );
+
   static TextStyle textStyle32medium = GoogleFonts.inter(
     fontSize: 32.sp,
     fontWeight: FontWeightHelper.medium,
     color: AppColor.black,
   );
 
+  static TextStyle textStyle17medium = GoogleFonts.inter(
+    fontSize: 17.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColor.primary,
+  );
+
   static TextStyle textStyle16Regular = GoogleFonts.inter(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
+    color: AppColor.black,
+  );
+
+  static TextStyle textStyle14regular = GoogleFonts.archivoBlack(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.primary,
+  );
+
+  static TextStyle textStyle20Regular = GoogleFonts.publicSans(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.gray,
+  );
+
+  static TextStyle textStyle10Regular = GoogleFonts.publicSans(
+    fontSize: 10.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColor.black,
+  );
+
+  static TextStyle textStyle20bold = GoogleFonts.publicSans(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.black,
+  );
+
+  static TextStyle textStyle20Bold = GoogleFonts.inter(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.white,
+  );
+
+  static TextStyle textStyle14Bold = GoogleFonts.poppins(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
     color: AppColor.black,
   );
 
@@ -75,6 +135,11 @@ class TextStyleTheme {
   static TextStyle textStyle12regular = GoogleFonts.poppins(
     color: AppColor.black,
     fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+  );
+  static TextStyle textStyle16regular = GoogleFonts.publicSans(
+    color: AppColor.black,
+    fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
   );
 

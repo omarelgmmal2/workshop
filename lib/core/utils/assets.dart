@@ -6,6 +6,20 @@ class AppImages{
 
   static const appLogo = '${basePathImages}workshop_logo.png';
   static const onboarding = '${basePathImages}workshop_onboarding.png';
+  static const home = '${basePathIcons}home.png';
+  static const orders = '${basePathIcons}orders.png';
+  static const account = '${basePathIcons}account.png';
+  static const notification = '${basePathIcons}notification.png';
+  static const car1 = '${basePathImages}car1.png';
+  static const car2 = '${basePathImages}car2.png';
+  static const car3 = '${basePathImages}car3.png';
+  static const spareParts1 = '${basePathImages}spare_parts1.png';
+  static const spareParts2 = '${basePathImages}spare_parts2.png';
+  static const spareParts3 = '${basePathImages}spare_parts3.png';
+  static const spareParts4 = '${basePathImages}spare_parts4.png';
+  static const spareParts5 = '${basePathImages}spare_parts5.png';
+  static const spareParts6 = '${basePathImages}spare_parts6.png';
+  static const completedOrder = '${basePathImages}completed_order.png';
 
 
   // Icons
@@ -18,4 +32,11 @@ class AppImages{
   static const password = '${basePathIcons}password$format';
   static const phone = '${basePathIcons}phone$format';
   static const name = '${basePathIcons}name$format';
+  static const search = '${basePathIcons}search$format';
+  static const cart = '${basePathIcons}cart$format';
+  static const notificationSvg = '${basePathIcons}notification$format';
+  static const help = '${basePathIcons}Help$format';
+  static const logOut = '${basePathIcons}Logout$format';
+  static const edit = '${basePathIcons}Edit$format';
+  static const lock = '${basePathIcons}Lock$format';
 }
