@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:workshop_app/core/utils/app_color.dart';
-import 'package:workshop_app/core/utils/spacing.dart';
-import 'package:workshop_app/model/spare_parts_model.dart';
-import '../../../core/design/app_image.dart';
-import '../../../core/design/title_text.dart';
-import '../../../core/utils/text_style_theme.dart';
+import '../../core/design/app_image.dart';
+import '../../core/design/title_text.dart';
+import '../../core/utils/app_color.dart';
+import '../../core/utils/spacing.dart';
+import '../../core/utils/text_style_theme.dart';
+import '../../model/spare_parts_model.dart';
 
-class ItemProduct extends StatefulWidget {
+class PartsItem extends StatefulWidget {
   final SparePartsModel model;
-  const ItemProduct({super.key, required this.model});
+  const PartsItem({super.key, required this.model});
 
   @override
-  State<ItemProduct> createState() => _ItemProductState();
+  State<PartsItem> createState() => _PartsItemState();
 }
 
-class _ItemProductState extends State<ItemProduct> {
+class _PartsItemState extends State<PartsItem> {
+
   bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 230.h,
-      width: 190.w,
+      height: 117.h,
+      width: 380.w,
+      margin: EdgeInsets.only(top: 20.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.r),
         color: AppColor.white,
@@ -35,51 +37,49 @@ class _ItemProductState extends State<ItemProduct> {
           ),
         ],
       ),
-      child: Stack(
+      child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 120.h,
-                width: 190.w,
-                decoration: BoxDecoration(
-                  color: Color(0xffD7D7D7),
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: AppImage(
-                  widget.model.image,
-                  height: 110.h,
-                  width: 130.w,
-                  fit: BoxFit.scaleDown,
-                ),
+          Container(
+            height: 117.h,
+            width: 105.w,
+            decoration: BoxDecoration(
+              color: Color(0xffD7D7D7),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8.r),
+                bottomLeft: Radius.circular(8.r),
               ),
-              Transform.translate(
-                offset: Offset(180, -135),
-                child: Icon(
-                  Icons.star,
-                  size: 24,
-                  color: Color(0xffFCD306),
-                ),
-              ),
-              verticalSpace(10),
-              Padding(
-                padding: EdgeInsets.only(left: 10.w,bottom: 10.h),
-                child: CustomTextWidget(
+            ),
+            child: AppImage(
+              widget.model.image,
+              height: 90.h,
+              width: 90.w,
+              fit: BoxFit.scaleDown,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 16.w,top: 7.h,bottom: 7.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomTextWidget(
                   label: widget.model.text,
-                  style: TextStyleTheme.textStyle15medium,
+                  style: TextStyleTheme.textStyle20medium,
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                CustomTextWidget(
+                  label: "This is a slotted and drilled\nbrake disc.",
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyleTheme.textStyle16Regular,
+                ),
+                Row(
                   children: [
                     CustomTextWidget(
                       textAlign: TextAlign.center,
                       label: "\$${widget.model.price}",
                       style: TextStyleTheme.textStyle20medium,
                     ),
+                    horizontalSpace(130),
                     Container(
                       height: 26.h,
                       width: 26.h,
@@ -105,12 +105,11 @@ class _ItemProductState extends State<ItemProduct> {
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
     );
-
   }
 }

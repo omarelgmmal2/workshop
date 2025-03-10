@@ -40,7 +40,7 @@ class MyAccountPage extends StatelessWidget {
             Row(
               children: [
                 AppImage(
-                  AppImages.account,
+                  AppImages.user,
                 ),
                 horizontalSpace(5),
                 Padding(

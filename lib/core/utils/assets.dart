@@ -39,4 +39,5 @@ class AppImages{
   static const logOut = '${basePathIcons}Logout$format';
   static const edit = '${basePathIcons}Edit$format';
   static const lock = '${basePathIcons}Lock$format';
+  static const user = '${basePathIcons}user$format';
 }

@@ -2,36 +2,44 @@ import 'package:workshop_app/core/utils/assets.dart';
 
 class SparePartsModel {
   final String image,text;
+  final double price;
 
   SparePartsModel({
     required this.image,
     required this.text,
+    required this.price,
   });
 }
 
 List<SparePartsModel> sparePartsList = [
   SparePartsModel(
       image: AppImages.spareParts1,
-      text: "High Quality Drilled and Slotted Brake\n DiscsPort:Qingdao, China",
+      text: "Drilled  Slotted",
+    price: 20,
   ),
   SparePartsModel(
       image: AppImages.spareParts2,
-      text: "Car Air Filter K&N\n E-1100 Washable and\n Reusable",
+      text: "Drilled  Dark",
+    price: 30,
   ),
   SparePartsModel(
       image: AppImages.spareParts3,
-      text: "Generic NGK Japanese\n NGK Resistance 16\n Guards Set 2 Candles",
+      text: "Generic NGK",
+    price: 10,
   ),
   SparePartsModel(
       image: AppImages.spareParts4,
-      text: "MagnaFlow Exhaust\n Products MagnaFlow\n 14815 Exhaust Muffler",
+      text: "MagnaFlow Exhaust",
+    price: 50,
   ),
   SparePartsModel(
       image: AppImages.spareParts5,
-      text: "MagnaFlow Exhaust\n Products MagnaFlow\n 14815 Exhaust Muffler",
+      text: "MagnaFlow Exhaust",
+    price: 30,
   ),
   SparePartsModel(
       image: AppImages.spareParts6,
-      text: "MagnaFlow Exhaust\n Products MagnaFlow\n 14815 Exhaust Muffler",
+      text: "MagnaFlow Exhaust",
+    price: 20,
   ),
 ];

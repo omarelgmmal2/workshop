@@ -37,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
     AppImages.home,
     AppImages.notification,
     AppImages.orders,
-    AppImages.account,
+    AppImages.user,
   ];
 
   @override

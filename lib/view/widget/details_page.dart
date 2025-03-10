@@ -20,7 +20,7 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: CustomTextWidget(
-            label: "Product Details",
+            label: model.text,
           style: TextStyleTheme.textStyle20Bold,
         ),
         action: IconButton(
@@ -42,8 +42,9 @@ class DetailsPage extends StatelessWidget {
             children: [
               AppImage(
                 model.image,
-                height: 295.h,
-                width: 350.w,
+                height: 270.h,
+                width: 280.w,
+                fit: BoxFit.scaleDown,
               ),
               verticalSpace(27),
             ],

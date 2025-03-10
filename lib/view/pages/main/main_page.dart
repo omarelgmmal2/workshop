@@ -9,6 +9,8 @@ import 'package:workshop_app/core/utils/text_style_theme.dart';
 import 'package:workshop_app/model/spare_parts_model.dart';
 import 'package:workshop_app/model/type_cars_model.dart';
 import 'package:workshop_app/view/widget/item_product.dart';
+import 'package:workshop_app/view/widget/parts_item.dart';
+import 'package:workshop_app/view/widget/see_all_screen.dart';
 import '../../widget/custom_search_main.dart';
 import '../../widget/details_page.dart';
 
@@ -18,58 +20,116 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF5F5F5),
       appBar: CustomSearchMain(),
-      body: SafeArea(
-          child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 20.h),
-            children: [
-              CustomTextWidget(
-                  label: "For you",
-                style: TextStyleTheme.textStyle20bold,
-              ),
-              verticalSpace(5),
-              SizedBox(
-                height: 100.h,
-                child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => Container(
-                      height: 100.h,
-                      width: 100.h,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          width: 2,
-                          color: AppColor.primary,
-                        ),
-                      ),
-                      child: AppImage(
-                        typeCarsList[index].image,
-                        height: 100.h,
-                        width: 100.h,
-                      ),
-                    ),
-                    separatorBuilder: (context, index) => horizontalSpace(16),
-                    itemCount: typeCarsList.length,
+      body: ListView(
+        children: [
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              margin: EdgeInsets.only(bottom: 20.h),
+              padding: EdgeInsets.only(left: 16.w),
+              height: 39.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: AppColor.primary
+                ),
+                gradient: LinearGradient(
+                  colors: [
+                    AppColor.primary.withOpacity(.86),
+                    Color(0xffC0FFDA),
+                  ],
                 ),
               ),
-              verticalSpace(20),
-              CustomTextWidget(
-                label: "Parts may you need",
-                style: TextStyleTheme.textStyle20bold,
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.location_on_outlined,
+                    color: AppColor.black,
+                  ),
+                  horizontalSpace(5),
+                  CustomTextWidget(
+                      label: "Delivering to Automatic-Tanta   ",
+                    style: TextStyleTheme.textStyle16Regular,
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_down_outlined,
+                    color: AppColor.black,
+                  ),
+                ],
               ),
-              verticalSpace(16),
-        GridView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          itemCount: sparePartsList.length,
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 163 / 250,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 94,
+            ),
           ),
-          itemBuilder: (context, index) => GestureDetector(
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: CustomTextWidget(
+                label: "For you",
+              style: TextStyleTheme.textStyle20bold,
+            ),
+          ),
+          verticalSpace(5),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: SizedBox(
+              height: 100.h,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {},
+                    child: AppImage(
+                      typeCarsList[index].image,
+                      height: 100.h,
+                      width: 100.h,
+                    ),
+                  ),
+                  separatorBuilder: (context, index) => horizontalSpace(16),
+                  itemCount: typeCarsList.length,
+              ),
+            ),
+          ),
+          verticalSpace(20),
+          Divider(
+            color: AppColor.primary,
+            height: 2,
+            thickness: 1,
+          ),
+          verticalSpace(20),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomTextWidget(
+                  label: "Top Sell",
+                  style: TextStyleTheme.textStyle20Bold.copyWith(
+                    color: AppColor.black,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    navigateTo(toPage: SeeAllScreen());
+                  },
+                  child: CustomTextWidget(
+                    label: "See All",
+                    style: TextStyleTheme.textStyle16Regular.copyWith(
+                      color: AppColor.primary,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          verticalSpace(16),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: SizedBox(
+                  height: 230.h,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: sparePartsList.length,
+                    separatorBuilder: (context, index) => horizontalSpace(16),
+                    itemBuilder: (context, index) => GestureDetector(
             onTap: () {
               navigateTo(
                   toPage: DetailsPage(model: sparePartsList[index]),
@@ -78,10 +138,39 @@ class MainPage extends StatelessWidget {
             child: ItemProduct(
               model: sparePartsList[index],
             ),
+                    ),
+                  ),
+                ),
           ),
-        ),
-            ],
+          verticalSpace(30),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: CustomTextWidget(
+                label: "Parts may you need",
+              style: TextStyleTheme.textStyle20Bold.copyWith(
+                color: AppColor.black,
+              ),
+            ),
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  navigateTo(
+                    toPage: DetailsPage(model: sparePartsList[index]),
+                  );
+                },
+                child: PartsItem(
+                  model: sparePartsList[index],
+                ),
+              ),
+              itemCount: sparePartsList.length,
+            ),
+          ),
+        ],
       ),
     );
   }
