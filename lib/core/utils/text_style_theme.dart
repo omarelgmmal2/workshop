@@ -30,10 +30,22 @@ class TextStyleTheme {
     color: AppColor.white,
   );
 
+  static TextStyle textStyle17Bold = GoogleFonts.inter(
+    fontSize: 17.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColor.black,
+  );
+
   static TextStyle textStyle18SemiBold = GoogleFonts.inter(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: AppColor.white,
+  );
+
+  static TextStyle textStyle20SemiBold = GoogleFonts.rubik(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColor.black,
   );
 
   static TextStyle textStyle22SemiBold = GoogleFonts.rubik(
@@ -126,8 +138,20 @@ class TextStyleTheme {
     color: AppColor.primary,
   );
 
+  static TextStyle textStyle18Regular = GoogleFonts.rubik(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Color(0xff484848),
+  );
+
   static TextStyle textStyle18medium = GoogleFonts.poppins(
     fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColor.black,
+  );
+
+  static TextStyle textStyle16medium = GoogleFonts.rubik(
+    fontSize: 16.sp,
     fontWeight: FontWeightHelper.medium,
     color: AppColor.black,
   );

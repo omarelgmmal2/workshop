@@ -142,7 +142,13 @@ class MainPage extends StatelessWidget {
                   ),
                 ),
           ),
-          verticalSpace(30),
+          verticalSpace(20),
+          Divider(
+            color: AppColor.primary,
+            height: 2,
+            thickness: 1,
+          ),
+          verticalSpace(16),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: CustomTextWidget(
