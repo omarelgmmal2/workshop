@@ -176,6 +176,7 @@ class MainPage extends StatelessWidget {
               itemCount: sparePartsList.length,
             ),
           ),
+          verticalSpace(16),
         ],
       ),
     );

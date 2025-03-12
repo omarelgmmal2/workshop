@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:workshop_app/core/logic/helper_methods.dart';
 import 'package:workshop_app/core/utils/spacing.dart';
 import 'package:workshop_app/model/orders_model.dart';
+import 'package:workshop_app/view/pages/cart/cart_page.dart';
 import 'package:workshop_app/view/widget/order_item.dart';
 import '../../../core/design/app_image.dart';
 import '../../../core/design/custom_app_bar.dart';
@@ -16,18 +18,20 @@ class MyOrdersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff0AA7CB),
       appBar: CustomAppBar(
-        height: 70.h,
-        padding: EdgeInsets.only(right: 40.w,left: 40.w,bottom: 25.h),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(100.r),
-          bottomRight: Radius.circular(100.r),
-        ),
+        height: 50.h,
+         padding: EdgeInsets.symmetric(horizontal: 16.w),
         hideBack: true,
-        action: AppImage(
-          AppImages.cart,
-          height: 39.h,
-          width: 39.h,
+        action: GestureDetector(
+          onTap: () {
+            navigateTo(toPage: CartPage());
+          },
+          child: AppImage(
+            AppImages.cart,
+            height: 39.h,
+            width: 39.h,
+          ),
         ),
         title: CustomTextWidget(
           label: "Orders",

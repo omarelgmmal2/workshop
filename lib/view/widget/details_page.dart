@@ -100,7 +100,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           label: "\$${widget.model.price}",
                           style: TextStyleTheme.textStyle17Bold,
                         ),
-                        horizontalSpace(5),
+                        horizontalSpace(8),
                         CustomTextWidget(
                           label: "\$210",
                           style: TextStyleTheme.textStyle14Regular.copyWith(
