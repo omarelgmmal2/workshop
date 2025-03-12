@@ -15,7 +15,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff0AA7CB),
+      backgroundColor: Color(0xffDCFFF4),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(top: 20.h,right: 20.w,left: 20.w),
         height: 150.h,
@@ -59,8 +59,7 @@ class CartPage extends StatelessWidget {
                 text: "Check out",
                 textStyle: TextStyleTheme.textStyle18SemiBold,
                 buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: AppColor.primary,
-                  //backgroundColor: Color(0xff0AA7CB),
+                  backgroundColor: Color(0xff0AA7CB),
                 ),
                 onPress: () {},
             ),

@@ -18,7 +18,7 @@ class MyOrdersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff0AA7CB),
+      backgroundColor: Color(0xffDCFFF4),
       appBar: CustomAppBar(
         height: 50.h,
          padding: EdgeInsets.symmetric(horizontal: 16.w),
