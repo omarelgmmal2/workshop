@@ -6,24 +6,22 @@ import 'package:workshop_app/core/design/title_text.dart';
 import 'package:workshop_app/core/utils/assets.dart';
 import 'package:workshop_app/core/utils/spacing.dart';
 import 'package:workshop_app/core/utils/text_style_theme.dart';
+import 'package:workshop_app/view/widget/notification_item.dart';
 import '../../../core/design/custom_app_bar.dart';
 import '../../../core/utils/app_color.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
 
-  final bool isEmpty = true;
+  final bool isEmpty = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffDCFFF4),
       appBar: CustomAppBar(
         height: 70.h,
-        padding: EdgeInsets.only(right: 40.w,left: 40.w,bottom: 25.h),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(100.r),
-          bottomRight: Radius.circular(100.r),
-        ),
+        padding: EdgeInsets.only(right: 16.w,left: 16.w),
         hideBack: true,
         action: AppImage(
           AppImages.notificationSvg,
@@ -128,10 +126,43 @@ class NotificationPage extends StatelessWidget {
           ],
         ),
       ) : SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [],
-            ),
+          child: ListView(
+            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 20.h),
+            children: [
+              Row(
+                children: [
+                  CustomTextWidget(
+                      label: "New",
+                    style: TextStyleTheme.textStyle18SemiBold.copyWith(
+                      color: AppColor.black,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 3.h,right: 1.w),
+                    margin: EdgeInsets.only(left: 20.w),
+                    height: 20.h,
+                    width: 20.h,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xff9DEDFF),
+                    ),
+                    child: CustomTextWidget(
+                      textAlign: TextAlign.center,
+                      label: "6",
+                      style: TextStyleTheme.textStyle12regular,
+                    ),
+                  ),
+                ],
+              ),
+              verticalSpace(24),
+              ListView.separated(
+                shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  separatorBuilder: (context, index) => verticalSpace(16),
+                  itemBuilder: (context, index) => NotificationItem(),
+                itemCount: 7,
+              ),
+            ],
           ),
       ),
     );

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:workshop_app/view/home/home_view.dart';
 import 'core/logic/helper_methods.dart';
-import 'core/paymob/paymob_pay.dart';
 import 'core/themes/app_theme.dart';
 import 'core/utils/app_strings.dart';
 
@@ -26,7 +25,7 @@ class WorkShopApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: child,
       ),
-      child: const PayMobPay(),
+      child: const HomeView(),
     );
   }
 }
